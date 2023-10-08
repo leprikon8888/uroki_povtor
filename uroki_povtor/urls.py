@@ -22,7 +22,7 @@ from uroki_povtor import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.main_page),
+    path('', views.MainPage.as_view()),
 ]
 
 if settings.DEBUG:
