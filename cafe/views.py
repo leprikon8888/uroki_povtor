@@ -24,7 +24,7 @@ class MainPage(TemplateView):
         if reservation_form.is_valid():
             reservation_form.save()
             messages.success(request, 'Сообщение о бронировании столика отправлено администратору!')
-            redirect('cafe:home')
+            return redirect('cafe:home')
         messages.error(request, 'Сообщение о бронировании столика НЕ отправлено администратору!')
         context = super().get_context_data(**kwargs)
         context['booking_form'] = reservation_form
