@@ -1,11 +1,11 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from cafe.models import DishCategory, Dish, Gallery
+from cafe.models import DishCategory, Dish, Gallery,Reservation
 
 admin.site.register(Gallery)
 
-
+admin.site.register(Reservation)
 @admin.register(DishCategory)
 class DishCategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}

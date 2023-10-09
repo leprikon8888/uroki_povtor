@@ -43,12 +43,12 @@ class Reservation(models.Model):
     name = models.CharField(max_length=60)
     email = models.EmailField()
     phone_regex = RegexValidator(
-        regex=r'^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$',
-        message='Phone number must be entered in the format: +38(0xx)xxxxxxx',
+        regex=r'^0[0-9]{9}$',
+        message='Phone number must be entered in the format: 0xxxxxxxxx',
     )
     phone = models.CharField(validators=[phone_regex], max_length=20)
     date = models.DateField()
-    time = models.TextField()
+    time = models.TimeField()
     people = models.PositiveSmallIntegerField()
     message = models.TextField(max_length=200, blank=True)
 
