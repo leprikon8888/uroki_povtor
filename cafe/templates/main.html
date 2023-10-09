@@ -374,7 +374,9 @@
     </section><!-- End Chefs Section -->
 
     <!-- ======= Book A Table Section ======= -->
-    {% include 'booking_form.html' %}
+    {% if request.user.is_authenticated %}
+        {% include 'booking_form.html' %}
+    {% endif %}
     <!-- End Book A Table Section -->
 
     <!-- ======= Gallery Section ======= -->
